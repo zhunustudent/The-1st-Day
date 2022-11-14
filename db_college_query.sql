@@ -132,12 +132,12 @@ WHERE course.hours>12
 
 
 -- TASK 19
-SELECT course.name, course.hours, special.name, otdel.name FROM course JOIN special ON course.special_id=special.special_id
+SELECT course.name, course.hours, special.name, otdel.name, day.name FROM course JOIN special ON course.special_id=special.special_id
 JOIN otdel ON special.otdel_id=otdel.otdel_id 
 JOIN graduate ON course.course_id=graduate.course_id
 JOIN graduate_time ON graduate.graduate_id=graduate_time.graduate_id
 JOIN day ON graduate_time.day_id=day.day_id
-WHERE otdel.otdel_id=2 AND day.day_id BETWEEN 3 AND 5
+WHERE otdel.otdel_id=2 AND day.day_id=3 OR day.day_id=5
 
 
 -- TASK 20
